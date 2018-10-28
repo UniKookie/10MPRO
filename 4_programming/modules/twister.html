@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Twister Spinner</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="#" />
+        <!-- Uncomment to use external CSS
+        <link rel="stylesheet" href="PATH/TO/EXTERNAL/STYLES.CSS">
+        -->
+
+        <style type="text/css">
+            body {
+                text-align: center;
+                font-size: 30px;
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Spinnerless Twister</h2>
+        <b>Colour:</b><p id='colour'>_____</p>
+
+        <b>Body Part:</b><p id='bp'>_____</p>
+
+        <button onclick='random()'>Randomise</button>
+        <br>
+        <img id='cimg' src="resources/spinner_artwork.jpg" height='110px' width='110px'>
+
+
+        <script>
+          //Runs the go and picture functions
+            function random() {
+                go();
+                picture();
+            }
+          //Chooses a random colour and body part
+            function go() {
+                var colours = ["Red","Yellow","Blue","Green"];
+                var bp = ["Right Hand","Left Hand","Right Foot","Left Foot"];
+                var RC = colours[Math.floor(Math.random()*colours.length)];
+                var RBP = bp[Math.floor(Math.random()*bp.length)];
+                document.getElementById('colour').innerHTML= RC;
+                document.getElementById('bp').innerHTML = RBP;
+            }
+           //Gives a picture relating to what has been randomised
+            function picture() {
+                document.getElementById('colours').value;
+                    if (colours == "Red") {
+                        document.getElementById('cimg').src = "resources/REDDOTSUPREME.png";
+                    }
+                    if (colours == "Yellow") {
+                        document.getElementById('cimg').src = "resources/YELLOWDOTSUPREME.png";
+                    }
+                    if (colours == "Blue") {
+                        document.getElementById('cimg').src = "resources/BLUEDOTSUPREME.png";
+                    }
+                    if (colours == "Green") {
+                        document.getElementById('cimg').src = "resources/GREENDOTSUPREME.png";
+                    }
+            }
+
+        </script>
+    </body>
+</html>
