@@ -24,8 +24,8 @@
         <b>Body Part:</b><p id='bp'>_____</p>
 
         <button onclick='random()'>Randomise</button>
-        <br>
-        <img id='cimg' src="resources/spinner_artwork.jpg" height='110px' width='110px'>
+        <br><br>
+        <img id='cimg' src="https://lh3.googleusercontent.com/wDEhZwDSbSWzALuGrRrGnh9PaBoFUyiUX7HwT0MCODiIykPmAjca_YL-GS5O1T-Ti2Qj" height='110px' width='110px'>
 
 
         <script>
@@ -41,23 +41,19 @@
                 var RC = colours[Math.floor(Math.random()*colours.length)];
                 var RBP = bp[Math.floor(Math.random()*bp.length)];
                 document.getElementById('colour').innerHTML= RC;
-                document.getElementById('bp').innerHTML = RBP;
-            }
-           //Gives a picture relating to what has been randomised
-            function picture() {
-                document.getElementById('colours').value;
-                    if (colours == "Red") {
-                        document.getElementById('cimg').src = "resources/REDDOTSUPREME.png";
-                    }
-                    if (colours == "Yellow") {
-                        document.getElementById('cimg').src = "resources/YELLOWDOTSUPREME.png";
-                    }
-                    if (colours == "Blue") {
-                        document.getElementById('cimg').src = "resources/BLUEDOTSUPREME.png";
-                    }
-                    if (colours == "Green") {
-                        document.getElementById('cimg').src = "resources/GREENDOTSUPREME.png";
-                    }
+                document.getElementById('bp').innerHTML = RBP
+                if (RC == "Red") {
+                    document.getElementById('cimg').src = "https://upload.wikimedia.org/wikipedia/commons/9/92/Location_dot_red.svg";
+                }
+                if (RC == "Yellow") {
+                    document.getElementById('cimg').src = "https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/Yellow_icon.svg/1024px-Yellow_icon.svg.png";
+                }
+                if (RC == "Blue") {
+                    document.getElementById('cimg').src = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/LACMTA_Circle_Blue_Line.svg/1024px-LACMTA_Circle_Blue_Line.svg.png";
+                }
+                if (RC == "Green") {
+                    document.getElementById('cimg').src = "https://upload.wikimedia.org/wikipedia/commons/0/07/Disc_Plain_green_dark.svg"
+                }
             }
 
         </script>
