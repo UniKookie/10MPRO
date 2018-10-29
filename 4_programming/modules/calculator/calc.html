@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+    Name: Eva Tsarhatisidis
+    Date: 2018-10-24
+    File: calc.html
+    Desc: A calculator that work with two numbers only D;
+--->
+<html>
+    <head>
+        <title>Text Calc D':</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+        <style type="text/css">
+            /* Body pimp shop */
+            body {
+                background-color: darkblue;
+                text-align: center;
+                color: aliceblue;
+                font-size: 50px
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h2>Two Number Calculator</h2>
+        <!-- First input number --->
+        1st Number <input type=number id='a'>
+        <br><br>
+        <!-- Operation input -->
+        Operation <select id='o';>
+                    <option id='plus' value="+">+</option>
+                    <option id='minus' value="-">-</option>
+                    <option id='times' value="*">x</option>
+                    <option id='divi' value="/">÷</option>
+                  </select>
+        <br><br>
+        <!-- Second input number -->
+        2nd Number <input type=number id='b'>
+        <br><br>
+        <!-- Calculate button -->
+        <button id='c' onclick='solve()'>Calculate</button>
+        <br>
+        <!-- Where the answer appears -->
+        <p id='ans'></p>
+
+
+        <script>
+            function solve() {
+                var a = document.getElementById('a').value;
+                var b = document.getElementById('b').value;
+                var o
+                var o = document.getElementById('o').value;
+                 //Plus operation
+                    if (o == '+') {
+                        var plus = Number(a)+Number(b);
+                        document.getElementById('ans').innerHTML = plus;
+                        }
+                 //Minus operation
+                    if (o == '-') {
+                        var minus = Number(a)-Number(b);
+                        document.getElementById('ans').innerHTML = minus;
+                        }
+                 //Times operation
+                    if (o == '*') {
+                        var times = Number(a)*Number(b);
+                        document.getElementById('ans').innerHTML = times;
+                        }
+                 //Division operation
+                        if (o == '/') {
+                        var divi = Number(a)/Number(b);
+                        document.getElementById('ans').innerHTML = divi;
+                        }
+            }
+        </script>
+    </body>
+</html>
