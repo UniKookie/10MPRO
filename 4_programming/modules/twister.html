@@ -32,7 +32,6 @@
           //Runs the go and picture functions
             function random() {
                 go();
-                picture();
             }
           //Chooses a random colour and body part
             function go() {
@@ -42,6 +41,7 @@
                 var RBP = bp[Math.floor(Math.random()*bp.length)];
                 document.getElementById('colour').innerHTML= RC;
                 document.getElementById('bp').innerHTML = RBP
+                // Gives an appropriate image to what has been chosen
                 if (RC == "Red") {
                     document.getElementById('cimg').src = "https://upload.wikimedia.org/wikipedia/commons/9/92/Location_dot_red.svg";
                 }
