@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Soli</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+        <style type="text/css">
+
+        </style>
+    </head>
+
+    <body>
+        <input id="searchbar" placeholder="Search..">
+
+        <h2> +Add </h2>
+        <input id="song" placeholder="Song and Artist">
+        <input id="tag" placeholder="Tag">
+        <br>
+        <button onclick="savesong()" id="BAdd">Add</button> <button id="BCancel">Cancel</button>
+
+        <script>
+            function savesong() {
+                var SongArr = [ songs ];
+                var TagArr = [ tags ];
+                var songs = document.getElementById("song").value;
+                var tags = document.getElementById("tag").value;
+                SongArr.push(songs.value)
+
+            }
+        </script>
+    </body>
+</html>
