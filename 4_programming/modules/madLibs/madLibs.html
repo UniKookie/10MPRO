@@ -5,12 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <style type="text/css">
-            /* Your CSS goes here */
+            body {
+                text-align: center;
+                font-size: 25px;
+                background-color: darkmagenta;
+            }
         </style>
     </head>
 
     <body>
-        <h2>Madlibs? Maybe so</h2>
+        <img height= 80% width= 80% src="http://edoecohen.com/madlibs/images/logo.png">
+        <h3>Maybe so</h3>
         <!-- Inputs waiting for information -->
         Name:<input id='name'><br>
         Adjective:<input id='adj'><br>
@@ -20,9 +25,10 @@
         Activity:<input id='act'><br>
         <button onclick="p()">Create!</button><br>
         <p id='x'>Your Prompt</p>
+
         <script>
             function p() {
-                //Get input from user
+                //Gets input from user
                 var name = document.getElementById('name').value;
                 var adj = document.getElementById('adj').value;
                 var loc = document.getElementById('loc').value;
@@ -30,7 +36,7 @@
                 var person = document.getElementById('person').value;
                 var act = document.getElementById('act').value;
                 var r = [Math.floor(Math.random()* 3)+ 1];
-                //Gives prompt
+                //Gives a random prompt through an assigned number
                 if (r == 1) {
                     document.getElementById('x').innerHTML = name + " went to the " + adj + " " + loc + " with a " + thing + " to " + act + " with " + person ;
                 }
@@ -39,7 +45,7 @@
                     document.getElementById('x').innerHTML = "There once was a " + thing + " that lived " + adj + " at the " + loc + ". They loved to " + act + " all day with " + person + " and " + name;
                 }
                 if (r == 3) {
-                    document.getElementById('x').innerHTML = "The " + adj +" "+ act + " is the best part of " + name +" and "+ person + "'s" + " when they go to " + thing +" "+ loc;
+                    document.getElementById('x').innerHTML = "The " + adj +" "+ act + " is the best part of day " + name +" and "+ person + "'s" + " when they go to " + thing +" "+ loc;
                 }
 
             }
