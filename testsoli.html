@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Soli☀️🔊</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Uncomment to use external CSS
+        <link rel="stylesheet" href="PATH/TO/EXTERNAL/STYLES.CSS">
+        -->
+
+        <style type="text/css">
+            html body {
+                height: 100%;
+                width: 100%;
+            }
+
+            /* Your CSS goes here */
+        </style>
+    </head>
+
+    <body>
+        <!-- Search bar to find song/tag -->
+        Search
+        <input type="search" id='searchBar' size="40"><button id='findButton' onclick='findSong()'>🔍</button>
+        <br><br>
+        <!-- Songs related to Search -->
+        Related
+        <p id='searchResult'></p>
+        <br><br>
+        <!-- Add a song -->
+        +Add
+        <input id="song" placeholder="eg. CALM - Shotgun by George Ezra" size="40">
+        <button onclick='addSong()'>Submit</button>
+
+        <script>
+            //Song list array
+            var songList = ["SOFT - 200% by AKMU"];
+            //Search list array
+            var searchlist = []
+            //Find a song using user input
+            function findSong() {
+                var searchlist;
+                for () {
+                    if searchbar == songList {
+                        searchlist.push(document.getElementById('searchbar').value);
+                        searchresult = document.getElementById('searchbar').value;
+                    }
+                    else {
+                        document.getElementById('searchresult').innerHTML = 'No similar songs'
+                     }
+                }
+            }
+
+            //Add a song and place it in an array
+            function addSong() {
+                songList.push(document.getElementById('song').value);
+                alert(songList);
+            }
+
+        </script>
+    </body>
+</html>
