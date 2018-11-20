@@ -19,42 +19,51 @@
     </head>
 
     <body>
-        <!-- Search bar to find song/tag -->
-        Search
-        <input type="search" id='searchBar' size="40"><button id='findButton' onclick='findSong()'>🔍</button>
-        <br><br>
-        <!-- Songs related to Search -->
-        Related
-        <p id='searchResult'></p>
-        <br><br>
         <!-- Add a song -->
         +Add
-        <input id="song" placeholder="eg. CALM - Shotgun by George Ezra" size="40">
+        <input id="song" placeholder="eg. Shotgun by George Ezra [CALM | SUMMER]" size="40">
         <button onclick='addSong()'>Submit</button>
-        <ul id="myUL">
-        <li><a href="#">Adele</a></li>
-          <li><a href="#">Agnes</a></li>
-
-          <li><a href="#">Billy</a></li>
-          <li><a href="#">Bob</a></li>
-
-          <li><a href="#">Calvin</a></li>
-          <li><a href="#">Christina</a></li>
-          <li><a href="#">Cindy</a></li>
+        <br><br>
+        <!-- Search bar to find song/tag -->
+        Search
+        <input type="search" id='searchbar' size="40"><button id='findButton' onclick='findSong()'>🔍</button>
+        <br><br>
+        <!-- Songs with their artist and mood/theme -->
+        <p>Song List</p>
+        <ul id="songList">
+            <li><a>200% by AKMU [SOFT | HAPPY | LOVE]</a></li>
+            <li><a>Shut up and Dance by Walk the Moon [DANCE | ENERGY]</a></li>
+            <li><a>Play that Song by Train [CALM | SOFT]</a></li>
+            <li><a>Brooklyn in the Summer by Aloe Blacc [CALM | SUMMER]</a></li>
+            <li><a>The Less I Know the Better by Tame Impala [CALM | NIGHT]</a></li>
+            <li><a>Double Trouble Couple by Mamaroo [SOFT | LOVE | WARM]</a></li>
+            <li><a>Be Mean by DNCE [ENERGY]</a></li>
         </ul>
 
         <script>
-            //Song list array
-            var songList = ["SOFT - 200% by AKMU"];
-            //Search list array
-            var searchlist = []
             //Find a song using user input
             function findSong() {
-                var searchlist;
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("searchbar");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("songList");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
 
             function addSong() {
-                songList.push(document.getElementById('song').value);
-                alert(songList);
+                var ul = document.getElementById("songList");
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(document.getElementById('song').value));
+                ul.appendChild(li);
+                alert("Added " + document.getElementById('song').value);
             }
 
         </script>

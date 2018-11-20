@@ -38,10 +38,10 @@
             //Find a song using user input
             function findSong() {
                 var searchlist;
-                for () {
-
-                    if {
-
+                for (var i = 0; i<songList.length; i++;) {
+                    songlist = li[i].getElementsById("songlist")[0];
+                    if (songList.innerHTML.toUpperCase().indexOf(filter) > -1){
+                        document.getElementById('searchResult').innerHTML = ''
                     }
                      else {
                         document.getElementById('searchResult').innerHTML = 'No similar songs'
