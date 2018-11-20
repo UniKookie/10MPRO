@@ -13,20 +13,21 @@
                 height: 100%;
                 width: 100%;
             }
-
-            /* Your CSS goes here */
+            ul#songList {
+                list-style: none;
+            }
         </style>
     </head>
 
     <body>
+        <!-- Search bar to find song/tag -->
+        <p id='search'>Search</p>
+        <input type="search" id='searchbar' size="40"><button id='findButton' onclick='findSong()'>🔍</button>
+        <br><br>
         <!-- Add a song -->
         +Add
         <input id="song" placeholder="eg. Shotgun by George Ezra [CALM | SUMMER]" size="40">
         <button onclick='addSong()'>Submit</button>
-        <br><br>
-        <!-- Search bar to find song/tag -->
-        Search
-        <input type="search" id='searchbar' size="40"><button id='findButton' onclick='findSong()'>🔍</button>
         <br><br>
         <!-- Songs with their artist and mood/theme -->
         <p>Song List</p>
