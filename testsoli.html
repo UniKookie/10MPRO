@@ -31,6 +31,17 @@
         +Add
         <input id="song" placeholder="eg. CALM - Shotgun by George Ezra" size="40">
         <button onclick='addSong()'>Submit</button>
+        <ul id="myUL">
+        <li><a href="#">Adele</a></li>
+          <li><a href="#">Agnes</a></li>
+
+          <li><a href="#">Billy</a></li>
+          <li><a href="#">Bob</a></li>
+
+          <li><a href="#">Calvin</a></li>
+          <li><a href="#">Christina</a></li>
+          <li><a href="#">Cindy</a></li>
+        </ul>
 
         <script>
             //Song list array
@@ -40,18 +51,7 @@
             //Find a song using user input
             function findSong() {
                 var searchlist;
-                for () {
-                    if searchbar == songList {
-                        searchlist.push(document.getElementById('searchbar').value);
-                        searchresult = document.getElementById('searchbar').value;
-                    }
-                    else {
-                        document.getElementById('searchresult').innerHTML = 'No similar songs'
-                     }
-                }
-            }
 
-            //Add a song and place it in an array
             function addSong() {
                 songList.push(document.getElementById('song').value);
                 alert(songList);

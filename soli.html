@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Soli</title>
+        <title>Soli☀️🔊</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
-        <style type="text/css">
 
+        <style type="text/css">
+            html body {
+                height: 100%;
+                width: 100%;
+            }
+
+            /* Your CSS goes here */
         </style>
     </head>
 
     <body>
-        <input id="searchbar" placeholder="Search..">
-
-        <h2> +Add </h2>
-        <input id="song" placeholder="Song and Artist">
-        <input id="tag" placeholder="Tag">
-        <br>
-        <button onclick="savesong()" id="BAdd">Add</button> <button id="BCancel">Cancel</button>
+        <!-- Search bar to find song/tag -->
+        Search
+        <input type="search" id='searchBar' size="40"><button id='findButton' onclick='findSong()'>🔍</button>
+        <br><br>
+        <!-- Songs related to Search -->
+        Related
+        <p id='searchResult'></p>
+        <br><br>
+        <!-- Add a song -->
+        +Add
+        <input id="song" placeholder="eg. CALM - Shotgun by George Ezra" size="40">
+        <button onclick='addSong()'>Submit</button>
 
         <script>
-            function savesong() {
-                var SongArr = [];
-                var TagArr = [];
-                var songs = document.getElementById("song").value;
-                var tags = document.getElementById("tag").value;
-                SongArr.push(songs.value)
+            //Song list array
+            var songList = ["SOFT - 200% by AKMU"];
+            //Search list array
+            var searchlist = []
+            //Find a song using user input
+            function findSong() {
+                var searchlist;
+                for () {
 
+                    if {
+
+                    }
+                     else {
+                        document.getElementById('searchResult').innerHTML = 'No similar songs'
+                     }
+                }
+
+            function addSong() {
+                songList.push(document.getElementById('song').value);
+                alert(songList);
             }
+
         </script>
     </body>
 </html>
