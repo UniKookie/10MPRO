@@ -12,25 +12,43 @@
             html body {
                 height: 100%;
                 width: 100%;
+                background-color: #fffa89;
             }
-            ul#songList {
+            #songlisttxt {
+                padding-left: 500px;
+            }
+            #songList {
                 list-style: none;
+                padding-left: 500px;
+            }
+            #inputs {
+                text-align: center;
+            }
+            #searchtxt {
+                padding-right: 330px;
+                margin-bottom: 3px;
+            }
+            #addtxt {
+                padding-right: 330px;
+                margin-bottom: 3px;
             }
         </style>
     </head>
 
     <body>
-        <!-- Search bar to find song/tag -->
-        <p id='search'>Search</p>
-        <input type="search" id='searchbar' size="40"><button id='findButton' onclick='findSong()'>🔍</button>
-        <br><br>
-        <!-- Add a song -->
-        +Add
-        <input id="song" placeholder="eg. Shotgun by George Ezra [CALM | SUMMER]" size="40">
-        <button onclick='addSong()'>Submit</button>
-        <br><br>
+        <div id="inputs">
+            <h3 id='searchtxt'>Search</h3>
+            <!-- Search bar to find song/tag -->
+            <input type="search" id='searchbar' size="45"><button id='findButton' onclick='findSong()'>🔍</button>
+            <br><br><br><br><br>
+            <!-- Add a song -->
+            <h3 id="addtxt">+Add</h3>
+            <input id="song" placeholder="eg. Shotgun by George Ezra [CALM | SUMMER]" size="40">
+            <button onclick='addSong()'>Submit</button>
+            <br><br>
+        </div>
         <!-- Songs with their artist and mood/theme -->
-        <p>Song List</p>
+        <h3 id="songlisttxt">Song List</h3>
         <ul id="songList">
             <li><a>200% by AKMU [SOFT | HAPPY | LOVE]</a></li>
             <li><a>Shut up and Dance by Walk the Moon [DANCE | ENERGY]</a></li>
