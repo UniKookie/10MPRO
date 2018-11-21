@@ -4,56 +4,98 @@
         <title>Soli☀️🔊</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
-
         <style type="text/css">
             html body {
                 height: 100%;
                 width: 100%;
+                background-color: #fffa89;
             }
 
-            findButton {
-                display: flex;
-                justify-content: center;
+            /* "Song List" text */
+            #songlisttxt {
+                padding-right: 290px;
+                margin-bottom: 5px;
+            }
+
+            /* List of songs */
+            #songList {
+                list-style: none;
+                margin-top: 5px;
+            }
+
+            /* Search bar, Add field and buttons */
+            #inputs {
+                text-align: center;
+            }
+
+            /* "Search" text */
+            #searchtxt {
+                padding-right: 330px;
+                margin-bottom: 3px;
+            }
+
+            /* "Add" text */
+            #addtxt {
+                padding-right: 330px;
+                margin-bottom: 3px;
             }
         </style>
     </head>
 
     <body>
-        <!-- Search bar to find song/tag -->
-        Search
-        <input type="search" id='searchBar' size="40"><button id='findButton' onclick='findSong()'>🔍</button>
-        <br><br>
-        <!-- Songs related to Search -->
-        Related
-        <p id='searchResult'></p>
-        <br><br>
-        <!-- Add a song -->
-        +Add
-        <input id="song" placeholder="eg. CALM - Shotgun by George Ezra" size="40">
-        <button onclick='addSong()'>Submit</button>
+        <!-- Soli logo -->
+        <img id="soliimg" src="imgs/2018-11-21%2014.49.29.png" style="width: 25%; margin-left: auto; margin-right: auto; display:block;">
+        <div id="inputs">
+            <h3 id='searchtxt'>Search</h3>
+            <!-- Search bar to find song/tag -->
+            <input type="search" id='searchbar' size="45"><button id='findButton' onclick='findSong()'>🔍</button>
+            <br><br><br><br><br>
+            <!-- Add a song -->
+            <h3 id="addtxt">+Add</h3>
+            <input id="song" placeholder="eg. Shotgun by George Ezra [CALM | SUMMER]" size="40">
+            <button onclick='addSong()'>Submit</button>
+            <br><br>
+        </div>
+        <div style="text-align: center;">
+        <!-- Songs with their artist and mood/theme -->
+        <h3 id="songlisttxt">Song List</h3>
+        <div style="display: inline-block; text-align: left;">
+        <ul id="songList">
+            <li><a>200% by AKMU [SOFT | HAPPY | LOVE]</a></li>
+            <li><a>Shut up and Dance by Walk the Moon [DANCE | ENERGY]</a></li>
+            <li><a>Play that Song by Train [CALM | SOFT]</a></li>
+            <li><a>Brooklyn in the Summer by Aloe Blacc [CALM | SUMMER]</a></li>
+            <li><a>The Less I Know the Better by Tame Impala [CALM | NIGHT]</a></li>
+            <li><a>Double Trouble Couple by Mamaroo [SOFT | LOVE | WARM]</a></li>
+            <li><a>Be Mean by DNCE [ENERGY]</a></li>
+        </ul>
+        </div>
+        </div>
 
         <script>
-            //Song list array
-            var songList = ["SOFT - 200% by AKMU"];
-            //Search list array
-            var searchlist = []
             //Find a song using user input
             function findSong() {
-                var searchlist;
-                for (var i = 0; i<songList.length; i++;) {
-                    songlist = li[i].getElementsById("songlist")[0];
-                    if (songList.innerHTML.toUpperCase().indexOf(filter) > -1){
-                        document.getElementById('searchResult').innerHTML = ''
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("searchbar");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("songList");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
                     }
-                     else {
-                        document.getElementById('searchResult').innerHTML = 'No similar songs'
-                     }
                 }
-
+            }
+            //Add a user inputed song to list
             function addSong() {
-                songList.push(document.getElementById('song').value);
-                alert(songList);
+                var ul = document.getElementById("songList");
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(document.getElementById('song').value));
+                ul.appendChild(li);
+                alert("Added " + document.getElementById('song').value);
             }
 
         </script>

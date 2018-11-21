@@ -4,30 +4,33 @@
         <title>Soli☀️🔊</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Uncomment to use external CSS
-        <link rel="stylesheet" href="PATH/TO/EXTERNAL/STYLES.CSS">
-        -->
-
         <style type="text/css">
             html body {
+                color: blue;
                 height: 100%;
                 width: 100%;
                 background-color: #fffa89;
             }
+            /* "Song List" text */
             #songlisttxt {
-                padding-left: 500px;
+                padding-right: 290px;
+                margin-bottom: 5px;
             }
+            /* List of songs */
             #songList {
                 list-style: none;
-                padding-left: 500px;
+                margin-top: 5px;
             }
+            /* Search bar, Add field and buttons */
             #inputs {
                 text-align: center;
             }
+            /* "Search" text */
             #searchtxt {
                 padding-right: 330px;
                 margin-bottom: 3px;
             }
+            /* "Add" text */
             #addtxt {
                 padding-right: 330px;
                 margin-bottom: 3px;
@@ -36,6 +39,8 @@
     </head>
 
     <body>
+        <!-- Soli logo -->
+        <img id="soliimg" src="imgs/2018-11-21%2014.49.29.png" style="width: 25%; margin-left: auto; margin-right: auto; display:block;">
         <div id="inputs">
             <h3 id='searchtxt'>Search</h3>
             <!-- Search bar to find song/tag -->
@@ -47,8 +52,10 @@
             <button onclick='addSong()'>Submit</button>
             <br><br>
         </div>
+        <div style="text-align: center;">
         <!-- Songs with their artist and mood/theme -->
         <h3 id="songlisttxt">Song List</h3>
+        <div style="display: inline-block; text-align: left;">
         <ul id="songList">
             <li><a>200% by AKMU [SOFT | HAPPY | LOVE]</a></li>
             <li><a>Shut up and Dance by Walk the Moon [DANCE | ENERGY]</a></li>
@@ -58,6 +65,8 @@
             <li><a>Double Trouble Couple by Mamaroo [SOFT | LOVE | WARM]</a></li>
             <li><a>Be Mean by DNCE [ENERGY]</a></li>
         </ul>
+        </div>
+        </div>
 
         <script>
             //Find a song using user input
